@@ -1,0 +1,38 @@
+body {
+    background-image: url("../asset/1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -5px;
+}
+.site_info {
+    margin: auto;
+    width: 80%;
+    max-width: 500px;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 15px;
+    background: #00000014;
+    border-radius: 10px;
+    padding: 15px;
+    backdrop-filter: blur(5px);
+    border: 1px solid #ffffff7a;
+    box-shadow: 9px 13px 23px -12px rgb(0 0 0 / 33%);
+    color: #430000;
+}
+
+p.card_user_name {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #0f0000;
+    background: #91919114;
+    backdrop-filter: blur(1px);
+    border: 1px solid #ffffff7a;
+    padding: 5px 16px;
+    border-radius: 6px;
+    box-shadow: 11px 10px 15px -9px rgb(0 0 0 / 20%);
+}
+
+p.card_user_name b {
+    font-family: "El Messiri", sans-serif;
+    font-size: 20px;
+}

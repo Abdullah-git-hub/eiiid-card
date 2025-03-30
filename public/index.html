@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Eiiid Card</title>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+        <meta
+            property="og:image"
+            content="https://firebasestorage.googleapis.com/v0/b/send-anonymous-msg.appspot.com/o/ygggArtboard%20241%404x.png?alt=media&token=641a55fb-775e-4a6f-a5ff-dc4871a55ca9"
+        />
+        <meta property="og:title" content="Share happiness with EiiiD cards" />
+        <link
+            rel="shortcut icon"
+            href="asset/ramadan.png"
+            type="image/x-icon"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="header.css" />
+    </head>
+    <body>
+        <header class="header">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">EiiiD.<span>Card</span></a>
+                </div>
+                <input type="checkbox" id="menu-toggle" />
+                <label for="menu-toggle" class="menu-icon">&#9776;</label>
+                <ul class="menu">
+                    <li id="login_menu"><a href="#">Login</a></li>
+                    <li id="logout_menu"><a href="#">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="login_modal_back"></div>
+        <div class="login_modal">
+            <p>Please SignUp with your google account to create an Eid Card</p>
+            <button id="googleLoginBtn">
+                <img src="asset/7123025_logo_google_g_icon.png" alt="" /> Log In
+                With Google
+            </button>
+        </div>
+        <div class="container">
+            <div class="pop_up">
+                <i class="fa-solid fa-circle-info"></i> Click to open/close
+            </div>
+            <div class="card-container">
+                <div class="left-page">
+                    <div class="page page-1">
+                        <!-- <h1>Page 1</h1> -->
+                        <img
+                            id="page_1_img"
+                            src="asset/1_1.png"
+                            alt=""
+                            srcset=""
+                        />
+                    </div>
+                    <div class="page page-2">
+                        <!-- <h1>Page 2</h1> -->
+                        <img
+                            id="page_2_img"
+                            src="asset/1_2.png"
+                            alt=""
+                            srcset=""
+                        />
+                    </div>
+                </div>
+                <div class="right-page">
+                    <div class="page page-3">
+                        <div class="page-content">
+                            <div class="avatar">
+                                <img src="asset/avatar.jpg" alt="" />
+                            </div>
+
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                        <img
+                            id="page_3_img"
+                            src="asset/1_3.png"
+                            alt=""
+                            srcset=""
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info_block">
+            <form id="eid_card_form">
+                <label>Choose Style</label>
+                <div class="style_option">
+                    <input
+                        type="radio"
+                        name="style_option"
+                        id="style_1"
+                        value="1"
+                        class="style__option"
+                        checked
+                        required
+                    />
+                    <label for="style_1" class="style__label"
+                        ><img src="asset/1_1.png" alt="" class="style__img"
+                    /></label>
+                    <input
+                        type="radio"
+                        name="style_option"
+                        id="style_2"
+                        value="2"
+                        class="style__option"
+                        required
+                    />
+                    <label for="style_2" class="style__label"
+                        ><img src="asset/2_1.png" alt="" class="style__img"
+                    /></label>
+                    <input
+                        type="radio"
+                        name="style_option"
+                        id="style_3"
+                        value="3"
+                        class="style__option"
+                        required
+                    />
+                    <label for="style_3" class="style__label"
+                        ><img src="asset/3_1.png" alt="" class="style__img"
+                    /></label>
+                    <input
+                        type="radio"
+                        name="style_option"
+                        id="style_4"
+                        value="4"
+                        class="style__option"
+                        required
+                    />
+                    <label for="style_4" class="style__label"
+                        ><img src="asset/4_1.png" alt="" class="style__img"
+                    /></label>
+                    <input
+                        type="radio"
+                        name="style_option"
+                        id="style_5"
+                        value="5"
+                        class="style__option"
+                        required
+                    />
+                    <label for="style_5" class="style__label"
+                        ><img src="asset/5_1.png" alt="" class="style__img"
+                    /></label>
+                    <input
+                        type="radio"
+                        name="style_option"
+                        id="style_6"
+                        value="6"
+                        class="style__option"
+                        required
+                    />
+                    <label for="style_6" class="style__label"
+                        ><img src="asset/6_1.png" alt="" class="style__img"
+                    /></label>
+                </div>
+                <label for="user_photo">Photo</label>
+                <input id="user_photo" type="file" accept="image/*" required />
+                <label for="user_name">Name</label>
+                <input
+                    id="user_name"
+                    placeholder="Ex: Jon Doe"
+                    maxlength="20"
+                    required
+                />
+                <label for="user_name">Wish</label>
+                <textarea id="user_wish" type="text" maxlength="300" required>
+                </textarea>
+                <p id="textarea_length"><span>0</span>/300</p>
+
+                <button type="submit" class="button-29">Update</button>
+            </form>
+        </div>
+
+        <div class="share_url_div">
+            <input type="url" name="share_url" id="share_url" readonly />
+            <button class="button-29 share_btn">Copy to share</button>
+        </div>
+
+        <footer>
+            <i class="fa-solid fa-copyright"></i>A fun project made by
+            <a href="https://www.facebook.com/arafatdotexe"
+                >Abdullah Al Arafat</a
+            >
+        </footer>
+
+        <script>
+            // Firebase configuration for the primary app
+            const firebaseConfig = {
+                apiKey: "AIzaSyBN7xQJwAdbekW3wXwxrWJhp3z_pvY9JCA",
+                authDomain: "eiiidcard.firebaseapp.com",
+                projectId: "eiiidcard",
+                storageBucket: "send-anonymous-msg.appspot.com",
+                messagingSenderId: "215408971211",
+                appId: "1:215408971211:web:3fe9e88653997964b83a4e",
+            };
+
+            // Firebase configuration for the secondary app
+            const secondaryAppConfig = {
+                apiKey: "AIzaSyClJRAxD_fHvdu1dT1tlVcSnFn02iHABaQ",
+                authDomain: "send-anonymous-msg.firebaseapp.com",
+                projectId: "send-anonymous-msg",
+                storageBucket: "send-anonymous-msg.appspot.com",
+                messagingSenderId: "308083184776",
+                appId: "1:308083184776:web:4d9e57b0a7168b73c0fb3d",
+            };
+
+            // Initialize the primary Firebase app
+            firebase.initializeApp(firebaseConfig);
+
+            // Initialize the secondary Firebase app with a name
+            const secondaryApp = firebase.initializeApp(
+                secondaryAppConfig,
+                "secondary"
+            );
+
+            // Get services for the primary app
+            const auth = firebase.auth();
+            const db = firebase.firestore();
+            const provider = new firebase.auth.GoogleAuthProvider();
+
+            // Get services for the secondary app
+            const secondaryAuth = secondaryApp.auth();
+            const secondaryDb = secondaryApp.firestore();
+            const secondaryStorage = secondaryApp.storage().ref(); // Reference to the root of the secondary storage
+
+            db.settings({ timestampsInSnapshots: true });
+            secondaryDb.settings({ timestampsInSnapshots: true }); // Apply to secondary as well
+        </script>
+        <script src="main.js"></script>
+        <script
+            src="https://kit.fontawesome.com/383d6dcfa8.js"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

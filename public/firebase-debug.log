@@ -1,0 +1,29 @@
+[debug] [2025-03-30T05:34:29.204Z] ----------------------------------------------------------------------
+[debug] [2025-03-30T05:34:29.208Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\user\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2025-03-30T05:34:29.209Z] CLI Version:   13.24.1
+[debug] [2025-03-30T05:34:29.209Z] Platform:      win32
+[debug] [2025-03-30T05:34:29.209Z] Node Version:  v20.13.1
+[debug] [2025-03-30T05:34:29.210Z] Time:          Sun Mar 30 2025 11:34:29 GMT+0600 (Bangladesh Standard Time)
+[debug] [2025-03-30T05:34:29.210Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-03-30T05:34:29.215Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-03-30T05:34:30.041Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-03-30T05:34:30.042Z] > authorizing via signed-in user (arafat200423@gmail.com)
+[debug] [2025-03-30T05:34:30.043Z] [iam] checking project eiiidcard for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-03-30T05:34:30.044Z] Checked if tokens are valid: false, expires at: 1742580691589
+[debug] [2025-03-30T05:34:30.045Z] Checked if tokens are valid: false, expires at: 1742580691589
+[debug] [2025-03-30T05:34:30.046Z] > refreshing access token with scopes: []
+[debug] [2025-03-30T05:34:30.048Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-03-30T05:34:30.049Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-03-30T05:34:30.505Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-03-30T05:34:30.506Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-03-30T05:34:30.520Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/eiiidcard:testIamPermissions [none]
+[debug] [2025-03-30T05:34:30.521Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/eiiidcard:testIamPermissions x-goog-quota-user=projects/eiiidcard
+[debug] [2025-03-30T05:34:30.521Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/eiiidcard:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-03-30T05:34:30.943Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-03-30T05:34:30.943Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2025-03-30T05:34:32.513Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/eiiidcard:testIamPermissions 200
+[debug] [2025-03-30T05:34:32.513Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/eiiidcard:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-03-30T05:34:32.515Z] Checked if tokens are valid: true, expires at: 1743316469506
+[debug] [2025-03-30T05:34:32.515Z] Checked if tokens are valid: true, expires at: 1743316469506
+[debug] [2025-03-30T05:34:32.515Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/eiiidcard [none]
